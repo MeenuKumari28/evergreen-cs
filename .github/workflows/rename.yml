@@ -20,8 +20,8 @@ jobs:
       - name: Rename the project
         run: |
           echo "Using '${{ env.REPOSITORY_NAME }}' and "${{ env.REPOSITORY_OWNER }}" to rename fastn package"
-          sed -i -e 's/<user_name>/${{ env.REPOSITORY_OWNER }}/g' -e 's/<repo_name>/${{ env.REPOSITORY_NAME }}/g' FASTN.ftd
-          sed -i -e 's/<user_name>/${{ env.REPOSITORY_OWNER }}/g' -e 's/<repo_name>/${{ env.REPOSITORY_NAME }}/g' index.ftd
+          sed -i -e 's/<user_name>/${{ env.REPOSITORY_OWNER }}/g' -e 's/evergreen-cs/${{ env.REPOSITORY_NAME }}/g' FASTN.ftd
+          sed -i -e 's/<user_name>/${{ env.REPOSITORY_OWNER }}/g' -e 's/evergreen-cs/${{ env.REPOSITORY_NAME }}/g' index.ftd
           rm .github/workflows/rename.yml
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
